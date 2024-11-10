@@ -7,6 +7,7 @@ export class AuthController {
     }
     @Post("register")
     async register(@Body() body: AuthDTO){
+        console.log('hehe',body)
         const user = await this.authService.register(body);
         try {
             return {
@@ -23,6 +24,7 @@ export class AuthController {
     }
     @Post("login")
     login(@Body() body: AuthDTO) {
+        console.log("body login",body);
         return this.authService.login(body);
     }
     
